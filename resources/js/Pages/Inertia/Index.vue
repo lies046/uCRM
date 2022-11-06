@@ -1,13 +1,10 @@
+<script setup>
+
+</script>
 <template>
+    <div v-if="$page.props.flash.message" class="bg-blue-300">
+        {{ $page.props.flash.message }}
+    </div>
 aaaa
 </template>
 
-<script>
-export default {
-    name: "Index"
-}
-</script>
-
-<style scoped>
-
-</style>
