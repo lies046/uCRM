@@ -35,11 +35,17 @@ class ItemController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreItemRequest  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreItemRequest $request)
     {
-        //
+        Item::create([
+            'name' => $request->name,
+            'memo' => $request->memo,
+            'price' => $request->price
+        ]);
+
+        return to_route('items.index');
     }
 
     /**
